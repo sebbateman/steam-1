@@ -1,15 +1,334 @@
-
 <!DOCTYPE html>
 <html>
-
-<body>
-  <h1>Sebastian's STEAM Portfolio</h1>
-
-  <a href="ar.html">augmented reality project</a><br>
   
+  <head>
+    <title>Hello World</title>   
+
+
+    <style> 
+
+      body {
+        background-image: url(muppet.jpg);
+        background-attachment: fixed;
+        cursor: crosshair;
+      }
+
+      
+      header {
+        background-color: #DBEBA9;
+        border: 6px solid;
+        border-color: #2B271E;
+        color: #2B271E;
+        padding: 6px;
+        border-radius: 24px;
+        font-family: 'Oswald', sans-serif;
+
+
+      }
+
+      section {
+        color: #EBF5DD;
+        font-family: 'Oswald', sans-serif;
+        float: left;
+      }
+
+      section h1{
+        width: 70%;
+      }
+
+      section h2 {
+        width: 100%;
+        }
+
+      .intro {
+        background-color: #DBEBA9;
+        float: left;
+        width: 100%;
+        color: #2B271E;
+        width: 100%;
+        padding: 6px;
+        padding-left: 12px;
+        margin: 6px;
+        border: 6px solid;
+        border-color: #2B271E;
+        font-family: 'Raleway', sans-serif;
+      }
+      
+
+      article {
+        background-color: #DBEBA9;
+        float: left;
+        width: 47%;
+        color: #2B271E;
+        padding: 6px;
+        padding-left: 12px;
+        margin: 6px;
+        border: 6px solid;
+        border-color: #2B271E;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      aside {
+        margin-top: 6px;
+        float: right;
+        width: 7%;
+        padding: 6px;
+        background-color: #DBEBA9;
+        border: 6px solid;
+        border-color: #2B271E;
+        border-radius: 24px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #DBEBA9;
+        color: #2B271E;
+        width: 100%;
+        float: left;
+        padding: 6px;
+      }
+
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+
+  </head>
   
+  <body>
+    <header>
+      <h1>sebastian's STEAM portfolio</h1>
+      <h2>science, tech, engineering, art, & math</h2>
+    </header>
+
+    <aside>
+      <a href="#project 1">Project 1</a><br>
+      <a href="#project 2">Project 2</a><br>
+      <a href="#project 3">Project 3</a><br>
+    </aside>
+
+   <section>
+      <h2>Hello</h2>
+      
+      <article class="intro">
+        what is up
+      </article>
+
+    </section>
+
+
+
+    <section>
+      <h2>Projects</h2>
+
+      <article id="project 1">
+        <h3>Project 1</h3>
+        <p>text</p>
+        <img src="boomboom.jpg" style="width:306px;height:408px;">
+      </article>
+
+      <article id="project 2">
+        <h3>Project 2</h3>
+        <p>text</p>
+        <img src="cry_laugh.jpg" style="width:300px;height:300px;">
+      </article>
+
+      <article id="project 3">
+        <h3>Project </h3>
+        <p>augmented reality</p>
+        <a href="https://sebbateman.github.io/steam-1/ar.html">click here</a>
+        <img src=tv.jpg>
+      </article>
+
+      <footer>
+        designed and programmed by seb b
+      </footer>
+      
+
+
+
+<script type="text/javascript">
+// <![CDATA[
+var colour="white";
+var sparkles=120;
+
+/****************************
+*  Tinkerbell Magic Sparkle *
+* (c) 2005 mf2fm web-design *
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      starx[i]+=(i%5-2)/5;
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tinyx[i]+=(i%5-2)/5;
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=="number") {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body.scrollTop || document.body.scrollLeft) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+  sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  if (typeof(self.innerWidth)=="number") {
+    swide=self.innerWidth;
+    shigh=self.innerHeight;
+  }
+  else if (document.documentElement && document.documentElement.clientWidth) {
+    swide=document.documentElement.clientWidth;
+    shigh=document.documentElement.clientHeight;
+  }
+  else if (document.body.clientWidth) {
+    swide=document.body.clientWidth;
+    shigh=document.body.clientHeight;
+  }
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  div.style.backgroundColor=colour;
+  return (div);
+}
+// ]]>
+</script>
+
+
+
+
+
+
+
+
+
+
   </body>
-
-
 
 </html>
